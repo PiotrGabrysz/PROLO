@@ -4,6 +4,7 @@ from selenium import webdriver
 
 CorrectLogin = "PD0234"
 InCorrectPass = "123123"
+CorrectPass = "Qwerty1!234567"
 Name = "Piotr"
 LastName = "Testowy"
 email = "email@testowy.pl"
@@ -94,9 +95,9 @@ class ProloRegistration(unittest.TestCase):
         # Wpisuję numer telefonu
         driver.find_element_by_xpath("//input[@test-id='phoneNumber']").send_keys(PhoneNumber)
         # Wpisuję hasło
-        driver.find_element_by_xpath("//input[@test-id='password']").send_keys(InCorrectPass)
+        driver.find_element_by_xpath("//input[@test-id='password']").send_keys(CorrectPass)
         # Powtarzam hasło
-        driver.find_element_by_xpath("//input[@formcontrolname='confirmPassword']").send_keys(InCorrectPass)
+        driver.find_element_by_xpath("//input[@formcontrolname='confirmPassword']").send_keys(CorrectPass)
         # Zaznaczam check-box z regulaminem
         driver.find_element_by_id("checkToRegister").click()
         # Klikam zarejestruj
